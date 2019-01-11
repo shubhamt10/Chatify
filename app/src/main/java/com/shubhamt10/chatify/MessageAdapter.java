@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -23,33 +24,36 @@ public class MessageAdapter extends ArrayAdapter<Message> {
     @Override
     public View getView(int position, View convertView,ViewGroup parent) {
 
-        if (convertView == null){
-            convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_message,parent,false);
-        }
-
-        ImageView photoImageView = convertView.findViewById(R.id.photoImageView);
-        TextView messageTextView = convertView.findViewById(R.id.messageTextView);
-        TextView nameTextView = convertView.findViewById(R.id.nameTextView);
-
         Message message = getItem(position);
+        ImageView imageView;
+        TextView textView;
+
+            if (message.getSenderName().equals(FirebaseAuth.getInstance().getCurrentUser().getDisplayName())) {
+                convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_sent_message,parent,false);
+                imageView = convertView.findViewById(R.id.sentMessageImage);
+                textView = convertView.findViewById(R.id.sentMessageText);
+            }else {
+                convertView = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_received_message,parent,false);
+                imageView = convertView.findViewById(R.id.receivedMessageImage);
+                textView = convertView.findViewById(R.id.receivedMessageText);
+            }
+
 
         boolean isPhoto = message.getPhotoUrl() != null ;
 
         if (isPhoto) {
-            messageTextView.setVisibility(View.GONE);
-            photoImageView.setVisibility(View.VISIBLE);
-            Glide.with(photoImageView.getContext())
+            textView.setVisibility(View.GONE);
+            imageView.setVisibility(View.VISIBLE);
+            Glide.with(imageView.getContext())
                     .asBitmap()
                     .apply(new RequestOptions().override(300,300))
                     .load(message.getPhotoUrl())
-                    .into(photoImageView);
+                    .into(imageView);
         }else {
-            messageTextView.setVisibility(View.VISIBLE);
-            photoImageView.setVisibility(View.GONE);
-            messageTextView.setText(message.getText());
+            textView.setVisibility(View.VISIBLE);
+            imageView.setVisibility(View.GONE);
+            textView.setText(message.getText());
         }
-
-        nameTextView.setText(message.getSenderName());
 
         return convertView;
     }
