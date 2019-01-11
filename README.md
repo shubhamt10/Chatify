@@ -14,3 +14,20 @@ Firebase
 # Backend
 
 Firebase : https://firebase.google.com
+
+# Screenshots
+
+## Login or SignUp
+
+<img src="images/login.jpg" width="150">
+<img src="images/signUp.jpg" width="150">
+
+## UserList Activity
+
+<img src="images/userList.jpg" width="150">
+
+## Chat Activity
+
+<img src="images/chat.jpg" width="150">
+
+
