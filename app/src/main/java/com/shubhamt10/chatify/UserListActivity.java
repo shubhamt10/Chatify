@@ -81,11 +81,10 @@ public class UserListActivity extends AppCompatActivity {
                 public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                     progressBar.setVisibility(View.INVISIBLE);
                     User user = dataSnapshot.getValue(User.class);
-                    String name = user.getName();
+                    String uid = user.getUid();
 
-                    if (currentUser.getDisplayName().equals(name)){
-
-                    }else {
+                    if (!currentUser.getUid().equals(uid)){
+                        System.out.println(user.getName());
                         userAdapter.add(user);
                     }
 
