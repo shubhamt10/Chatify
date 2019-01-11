@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/receivedMessageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="5dp"
+    android:layout_gravity="start"
+    android:orientation="vertical">
+
+    <ImageView
+        android:background="@drawable/loading"
+        android:id="@+id/sentMessageImage"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:id="@+id/sentMessageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="250dp"
+        android:padding="8dp"
+        android:textColor="#ffffff"
+        android:layout_gravity="start"
+        android:background="@drawable/receiveddrawable"
+        android:text="hi! how are you"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+</LinearLayout>
