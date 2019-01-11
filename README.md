@@ -1,7 +1,7 @@
 # Chatify
-This is a simple realtime android chat application which is developed using Firebase as backend.
+This is a realtime android chat application which is developed using Firebase as backend.
 
-#Technologies Used
+# Technologies Used
 
 Android Studio
 
@@ -10,3 +10,7 @@ JAVA
 XML
 
 Firebase
+
+# Backend
+
+Firebase : https://firebase.google.com
