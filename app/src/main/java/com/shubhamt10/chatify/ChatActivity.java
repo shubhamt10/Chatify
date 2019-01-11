@@ -101,7 +101,7 @@ public class ChatActivity extends AppCompatActivity {
         attachMessagesReadListener();
 
         messageListView = findViewById(R.id.messageListView);
-        messageAdapter = new MessageAdapter(this,R.layout.item_message,messages);
+        messageAdapter = new MessageAdapter(this,R.layout.item_sent_message,messages);
         messageListView.setAdapter(messageAdapter);
 
         if (messageDatabaseReference.getKey().isEmpty()){
