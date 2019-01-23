@@ -19,8 +19,8 @@ Firebase : https://firebase.google.com
 
 ## Login or SignUp
 
-<img src="images/login.jpg" width="150">
-<img src="images/signUp.jpg" width="150">
+<img src="images/Login.jpg" width="150">
+<img src="images/signup.jpg" width="150">
 
 ## UserList Activity
 
@@ -31,3 +31,6 @@ Firebase : https://firebase.google.com
 <img src="images/chat.jpg" width="150">
 
 
+## Image Activity
+
+<img src="images/image.jpg" width="150">
