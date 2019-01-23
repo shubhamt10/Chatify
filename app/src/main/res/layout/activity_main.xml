@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,12 +9,12 @@
 
         <ImageView
             android:id="@+id/chatLogo"
-            android:layout_width="400dp"
+            android:layout_width="300dp"
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:src="@drawable/chat_logo"
-            android:layout_marginTop="30dp"
-            android:scaleType="fitCenter"/>
+            android:layout_marginTop="50dp"
+            android:scaleType="centerCrop"/>
 
     <LinearLayout
         android:layout_marginTop="50dp"
@@ -56,15 +56,16 @@
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="20dp"
             android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
             android:text="LOGIN"
-            android:background="#0091EA"
+            android:background="@drawable/buttonback"
             android:onClick="signUpOrLogin"
             android:textSize="20sp"/>
 
@@ -72,6 +73,7 @@
             android:id="@+id/question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:layout_gravity="center_horizontal"
             android:text="Don't have an account yet? "/>
@@ -80,6 +82,7 @@
             android:id="@+id/loginOrSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:text="SignUp"
             android:textStyle="bold"
